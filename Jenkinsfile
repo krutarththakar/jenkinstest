@@ -1,13 +1,20 @@
 pipeline {
-agent any
-  stages {
-    stage ("build") {
-      steps {
-        echo "first multibranch"
-      }
+    agent any 
+    stages {
+        stage('master') { 
+            steps {
+                // 
+            }
+        }
+        stage('production') { 
+            steps {
+                // 
+            }
+        }
+        stage('staging') { 
+            steps {
+                // 
+            }
+        }
     }
-  }
-}
-node {
-      //groove script
 }
