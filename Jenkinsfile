@@ -6,10 +6,6 @@ pipeline {
                echo "first multibranch"
             }
         }
-        stage('production') { 
-            steps {
-               echo "first multibranch"
-            }
         }
         stage('staging') { 
             steps {
