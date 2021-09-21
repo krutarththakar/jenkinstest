@@ -1,27 +1,15 @@
 pipeline {
-  agent {
-    kubernetes {
-        label:       
-kind: Pod
-metadata:
-  name: jenkins-agentkub
-  nameSpace: jenkinskub
-spec:
-  containers:
-  - name: gradle
-    image: gradle:jdk8
-    securityContext:
-      runAsUser: 0
-    command:
-    - cat
-    tty: true
-   }
- }
+    agent {
+    docker {
+        image 'jenkins/jnlp-slave'
+        label 'appkub'
+        args  '-v /tmp:/tmp'
+    }
+}
     stages {
-        stage('Stage 1') {
+        stage('Test') {
             steps {
-                echo 'Hello world!' 
+                sh 'node --version'
             }
         }
     }
-}
