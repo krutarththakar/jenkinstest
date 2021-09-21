@@ -4,6 +4,7 @@ pipeline {
         image 'jenkins/jnlp-slave'
         label 'appkub'
         args  '-v /tmp:/tmp'
+        idleMinutes 5
     }
 }
     stages {
