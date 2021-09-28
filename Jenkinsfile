@@ -11,7 +11,7 @@ pipeline {
                echo "first multibranch"
             }
         }
-        stage('staging') { 
+        stage('QA') { 
             steps {
                echo "first multibranch"
             }
